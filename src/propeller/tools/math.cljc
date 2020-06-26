@@ -1,4 +1,4 @@
-(ns tools.math)
+(ns propeller.tools.math)
 
 (defonce PI #?(:clj  Math/PI
                :cljs js/Math.PI))
@@ -27,6 +27,11 @@
   [x]
   #?(:clj  (Math/cos x)
      :cljs (js/Math.cos x)))
+
+(defn div
+  "Returns the result of floating point division between x and y."
+  [x y]
+  (double (/ x y)))
 
 (defn exp
   "Returns Euler's number (approx. 2.71) raised to the given power."
